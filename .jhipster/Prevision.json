@@ -1,0 +1,56 @@
+{
+  "name": "Prevision",
+  "fields": [
+    {
+      "fieldName": "nbLatrine",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbPuisard",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbPublic",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbScolaire",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "centre",
+      "otherEntityRelationshipName": "prevision",
+      "relationshipName": "centre",
+      "otherEntityField": "libelle",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "annee",
+      "otherEntityRelationshipName": "prevision",
+      "relationshipName": "refannee",
+      "otherEntityField": "libelle",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "prevision",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gestioneau",
+  "clientRootFolder": "gestioneau",
+  "databaseType": "sql",
+  "changelogDate": "20210511114842"
+}

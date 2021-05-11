@@ -1,0 +1,185 @@
+{
+  "name": "FicheSuiviOuvrage",
+  "fields": [
+    {
+      "fieldName": "prjAppuis",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nomBenef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "prenomBenef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "professionBenef",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nbUsagers",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "contacts",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateRemiseDevis",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateDebutTravaux",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateFinTravaux",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "rue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "porte",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coutMenage",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "subvOnea",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "subvProjet",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "autreSubv",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "toles",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "animateur",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "superviseur",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "controleur",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "parcelle",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "parcelle",
+      "otherEntityField": "libelle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "prevision",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "prevision"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "natureOuvrage",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "natureouvrage",
+      "otherEntityField": "libelle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "typeHabitation",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "typehabitation",
+      "otherEntityField": "libelle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sourceApprovEp",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "sourceapprovep",
+      "otherEntityField": "libelle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "modeEvacuationEauUsee",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "modeevacuationeauusee",
+      "otherEntityField": "libelle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "modeEvacExcreta",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "modeevacexcreta",
+      "otherEntityField": "libelle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "macon",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "macon",
+      "otherEntityField": "libelle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "prefabricant",
+      "otherEntityRelationshipName": "ficheSuiviOuvrage",
+      "relationshipName": "prefabricant",
+      "otherEntityField": "libelle"
+    }
+  ],
+  "entityTableName": "fiche_suivi_ouvrage",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gestioneau",
+  "clientRootFolder": "gestioneau",
+  "databaseType": "sql",
+  "changelogDate": "20210511114843"
+}

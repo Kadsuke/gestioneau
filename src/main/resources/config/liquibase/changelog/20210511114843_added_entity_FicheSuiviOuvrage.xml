@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity FicheSuiviOuvrage.
+    -->
+    <changeSet id="20210511114843-1" author="jhipster">
+        <createTable tableName="fiche_suivi_ouvrage">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="prj_appuis" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="nom_benef" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="prenom_benef" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="profession_benef" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="nb_usagers" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="contacts" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="longitude" type="${floatType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="latitude" type="${floatType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="date_remise_devis" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="date_debut_travaux" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="date_fin_travaux" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="rue" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="porte" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cout_menage" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="subv_onea" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="subv_projet" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="autre_subv" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="toles" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="animateur" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="superviseur" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="controleur" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="parcelle_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="prevision_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="natureouvrage_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="typehabitation_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sourceapprovep_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="modeevacuationeauusee_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="modeevacexcreta_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="macon_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="prefabricant_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="fiche_suivi_ouvrage" columnName="date_remise_devis" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="fiche_suivi_ouvrage" columnName="date_debut_travaux" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="fiche_suivi_ouvrage" columnName="date_fin_travaux" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20210511114843-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/fiche_suivi_ouvrage.csv"
+                  separator=";"
+                  tableName="fiche_suivi_ouvrage">
+            <column name="id" type="numeric"/>
+            <column name="prj_appuis" type="string"/>
+            <column name="nom_benef" type="string"/>
+            <column name="prenom_benef" type="string"/>
+            <column name="profession_benef" type="string"/>
+            <column name="nb_usagers" type="numeric"/>
+            <column name="contacts" type="string"/>
+            <column name="longitude" type="numeric"/>
+            <column name="latitude" type="numeric"/>
+            <column name="date_remise_devis" type="${datetimeType}"/>
+            <column name="date_debut_travaux" type="${datetimeType}"/>
+            <column name="date_fin_travaux" type="${datetimeType}"/>
+            <column name="rue" type="string"/>
+            <column name="porte" type="string"/>
+            <column name="cout_menage" type="string"/>
+            <column name="subv_onea" type="numeric"/>
+            <column name="subv_projet" type="numeric"/>
+            <column name="autre_subv" type="numeric"/>
+            <column name="toles" type="numeric"/>
+            <column name="animateur" type="string"/>
+            <column name="superviseur" type="string"/>
+            <column name="controleur" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
