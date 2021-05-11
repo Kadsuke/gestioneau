@@ -1,0 +1,39 @@
+{
+  "name": "Commune",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "province",
+      "otherEntityRelationshipName": "commune",
+      "relationshipName": "province",
+      "otherEntityField": "libelle"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "typeCommune",
+      "otherEntityRelationshipName": "commune",
+      "relationshipName": "typecommune",
+      "otherEntityField": "libelle"
+    }
+  ],
+  "entityTableName": "commune",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gestioneau",
+  "clientRootFolder": "gestioneau",
+  "databaseType": "sql",
+  "changelogDate": "20210511114855"
+}

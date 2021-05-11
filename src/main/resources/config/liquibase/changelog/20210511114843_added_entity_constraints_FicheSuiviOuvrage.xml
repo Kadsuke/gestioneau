@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity FicheSuiviOuvrage.
+    -->
+    <changeSet id="20210511114843-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="parcelle_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__parcelle_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="parcelle"/>
+
+        <addForeignKeyConstraint baseColumnNames="prevision_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__prevision_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="prevision"/>
+
+        <addForeignKeyConstraint baseColumnNames="natureouvrage_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__natureouvrage_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nature_ouvrage"/>
+
+        <addForeignKeyConstraint baseColumnNames="typehabitation_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__typehabitation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_habitation"/>
+
+        <addForeignKeyConstraint baseColumnNames="sourceapprovep_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__sourceapprovep_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="source_approv_ep"/>
+
+        <addForeignKeyConstraint baseColumnNames="modeevacuationeauusee_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__modeevacuationeauusee_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mode_evacuation_eau_usee"/>
+
+        <addForeignKeyConstraint baseColumnNames="modeevacexcreta_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__modeevacexcreta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mode_evac_excreta"/>
+
+        <addForeignKeyConstraint baseColumnNames="macon_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__macon_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="macon"/>
+
+        <addForeignKeyConstraint baseColumnNames="prefabricant_id"
+                                 baseTableName="fiche_suivi_ouvrage"
+                                 constraintName="fk_fiche_suivi_ouvrage__prefabricant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="prefabricant"/>
+    </changeSet>
+</databaseChangeLog>

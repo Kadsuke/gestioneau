@@ -1,0 +1,32 @@
+{
+  "name": "Lot",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "section",
+      "otherEntityRelationshipName": "lot",
+      "relationshipName": "section",
+      "otherEntityField": "libelle"
+    }
+  ],
+  "entityTableName": "lot",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gestioneau",
+  "clientRootFolder": "gestioneau",
+  "databaseType": "sql",
+  "changelogDate": "20210511114859"
+}

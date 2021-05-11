@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Commune.
+    -->
+    <changeSet id="20210511114855-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="province_id"
+                                 baseTableName="commune"
+                                 constraintName="fk_commune__province_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="province"/>
+
+        <addForeignKeyConstraint baseColumnNames="typecommune_id"
+                                 baseTableName="commune"
+                                 constraintName="fk_commune__typecommune_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_commune"/>
+    </changeSet>
+</databaseChangeLog>

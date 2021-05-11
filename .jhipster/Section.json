@@ -1,0 +1,32 @@
+{
+  "name": "Section",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "secteur",
+      "otherEntityRelationshipName": "section",
+      "relationshipName": "secteur",
+      "otherEntityField": "libelle"
+    }
+  ],
+  "entityTableName": "section",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "gestioneau",
+  "clientRootFolder": "gestioneau",
+  "databaseType": "sql",
+  "changelogDate": "20210511114858"
+}
