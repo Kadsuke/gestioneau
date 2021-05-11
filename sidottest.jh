@@ -1,0 +1,125 @@
+
+entity Prevision{
+	  nbLatrine Integer required
+    nbPuisard Integer required
+    nbPublic Integer required
+    nbScolaire Integer required
+}
+entity FicheSuiviOuvrage{
+    prjAppuis String required 
+    nomBenef String required
+    prenomBenef String required
+    professionBenef String required
+    nbUsagers Long required
+    contacts String required
+    longitude Float required
+    latitude Float required
+    dateRemiseDevis Instant required
+    dateDebutTravaux Instant required
+    dateFinTravaux Instant required
+    rue String
+    porte String
+    coutMenage String required
+    subvOnea Integer required
+    subvProjet Integer required
+    autreSubv Integer required
+    toles Integer required
+    animateur String required
+    superviseur String required
+    controleur String required
+}
+entity SourceApprovEp{
+	libelle String required
+}
+entity TypeHabitation{
+	libelle String required
+}
+entity ModeEvacuationEauUsee{
+	libelle String required
+}
+entity ModeEvacExcreta{
+	libelle String required
+}
+entity Prefabricant{
+	libelle String required
+}
+entity Macon{
+	libelle String required
+}
+entity NatureOuvrage{
+	libelle String required
+}
+entity Annee{
+	libelle String required
+}
+entity TypeCommune{
+	libelle String required
+}
+entity Region{
+	libelle String required
+}
+entity Province{
+	libelle String required
+}
+entity Commune{
+	libelle String required
+}
+entity Localite{
+	libelle String required
+}
+entity Secteur{
+	libelle String required
+}
+entity Section{
+	libelle String required
+}
+entity Lot{
+	libelle String required
+}
+entity Parcelle{
+	libelle String required
+}
+entity DirectionRegionale{
+	libelle String required
+    responsable String required
+    contact String required
+}
+entity CentreRegroupement{
+	libelle String required
+    responsable String required
+    contact String required
+}
+entity Centre{
+	libelle String required
+    responsable String required
+    contact String required
+}
+relationship ManyToOne {
+  Province{region(libelle)} to Region,
+  Commune{province(libelle)} to Province,
+  Commune{typecommune(libelle)} to TypeCommune,
+  Localite{commune(libelle)} to Commune,
+  Secteur{localite(libelle)} to Localite,
+  Section{secteur(libelle)} to Secteur,
+  Lot{section(libelle)} to Section,
+  Parcelle{lot(libelle)} to Lot,
+  FicheSuiviOuvrage{parcelle(libelle)} to Parcelle,
+  CentreRegroupement{directionregionale(libelle)} to DirectionRegionale,
+  Centre{centreregroupement(libelle)} to CentreRegroupement,
+  FicheSuiviOuvrage{prevision} to Prevision,
+  FicheSuiviOuvrage{natureouvrage(libelle)} to NatureOuvrage,
+  FicheSuiviOuvrage{typehabitation(libelle)} to TypeHabitation,
+  FicheSuiviOuvrage{sourceapprovep(libelle)} to SourceApprovEp,
+  FicheSuiviOuvrage{modeevacuationeauusee(libelle)} to ModeEvacuationEauUsee,
+  FicheSuiviOuvrage{modeevacexcreta(libelle)} to ModeEvacExcreta,
+  FicheSuiviOuvrage{macon(libelle)} to Macon,
+  FicheSuiviOuvrage{prefabricant(libelle)} to Prefabricant
+}
+relationship OneToOne {
+Prevision{centre(libelle)} to Centre{prevision},
+Prevision{refannee(libelle)} to Annee{prevision}
+}
+microservice * with gestioneau
+service * with serviceClass
+dto * with mapstruct
+paginate * with pagination
